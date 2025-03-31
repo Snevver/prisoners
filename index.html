@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisoner Dilemma Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>The 100 Prisoners Problem</h1>
+        <p class="subtitle">A probabilistic paradox with a surprising solution</p>
+    </header>
+    
+    <main>
+        <section class="explanation">
+            <h2>About the Problem</h2>
+            <p>
+                Imagine 100 prisoners, each assigned a unique number from 1 to 100. In a room, there are 100 boxes, also numbered 1 to 100, each containing a slip of paper with a prisoner's number. Each prisoner will enter the room alone and can open up to 50 boxes. If all 100 prisoners find their own number, everyone goes free. If even one fails, everyone stays in prison.
+            </p>
+            <p>
+                The paradox is that with a <strong>random search strategy</strong>, each prisoner has only a 50% chance of finding their number (by opening 50 boxes). This leads to an overall success probability of (0.5)<sup>100</sup>, which is basically zero.
+            </p>
+            <p>
+                However, using the <strong>"loop strategy"</strong> - where each prisoner starts with their own number, opens that box, then follows the number inside to the next box - the success probability jumps to around 31%. This simulation demonstrates this counterintuitive result.
+            </p>
+            <div class="video-container">
+                <h3>Video Explanation</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iSNsgj1OCLA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="simulation-controls">
+            <h2>Simulation Settings</h2>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="simulation-count">Number of Simulations:</label>
+                    <input type="number" id="simulation-count" min="10" max="10000" value="1000" class="number-input">
+                </div>
+                
+                <div class="control-group">
+                    <label for="speed-slider">Simulation Speed:</label>
+                    <input type="range" id="speed-slider" min="1" max="100" value="10" class="slider">
+                </div>
+                
+                <div class="button-group">
+                    <button id="start-btn" class="btn primary">Start Simultaneous Simulations</button>
+                    <button id="reset-btn" class="btn secondary">Reset</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="simulation-results">
+            <h2>Results Comparison</h2>
+            
+            <div class="simulation-container-wrapper">
+                <div class="simulation-container">
+                    <h3>Loop Strategy</h3>
+                    <p class="strategy-description">Each prisoner starts with their own number and follows the chain.</p>
+                    <div class="progress" id="progress-loop">
+                        <div class="progress-bar" id="progress-bar-loop"></div>
+                    </div>
+                    <div class="counter" id="counter-loop">Simulations: 0</div>
+                    
+                    <div class="chart-container">
+                        <svg id="chart-loop" viewBox="-10 -10 64 64" width="200" height="200">
+                            <circle id="purple-circle-loop" cx="16" cy="16" r="14" fill="transparent" stroke="#8654eb" stroke-width="7"
+                                stroke-dasharray="100 100" stroke-linecap="butt" transform="rotate(-90 16 16)" />
+                            <circle id="green-circle-loop" cx="16" cy="16" r="14" fill="transparent" stroke="#50fa7b" stroke-width="7"
+                                stroke-dasharray="0 100" stroke-linecap="butt" transform="rotate(-90 16 16)" />
+                            <text id="percentage-text-loop" x="16" y="20" font-size="4" fill="#f8f8f2" text-anchor="middle">0%</text>
+                        </svg>
+                    </div>
+                    <pre id="output-loop"></pre>
+                </div>
+                
+                <div class="simulation-container">
+                    <h3>Random Strategy</h3>
+                    <p class="strategy-description">Each prisoner randomly opens 50 boxes with no strategy.</p>
+                    <div class="progress" id="progress-random">
+                        <div class="progress-bar" id="progress-bar-random"></div>
+                    </div>
+                    <div class="counter" id="counter-random">Simulations: 0</div>
+                    
+                    <div class="chart-container">
+                        <svg id="chart-random" viewBox="-10 -10 64 64" width="200" height="200">
+                            <circle id="purple-circle-random" cx="16" cy="16" r="14" fill="transparent" stroke="#8654eb" stroke-width="7"
+                                stroke-dasharray="100 100" stroke-linecap="butt" transform="rotate(-90 16 16)" />
+                            <circle id="green-circle-random" cx="16" cy="16" r="14" fill="transparent" stroke="#50fa7b" stroke-width="7"
+                                stroke-dasharray="0 100" stroke-linecap="butt" transform="rotate(-90 16 16)" />
+                            <text id="percentage-text-random" x="16" y="20" font-size="8" fill="#f8f8f2" text-anchor="middle">0%</text>
+                        </svg>
+                    </div>
+                    <pre id="output-random"></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Based on the 100 Prisoners Problem - <a href="https://en.wikipedia.org/wiki/100_prisoners_problem" target="_blank">Learn more</a></p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
