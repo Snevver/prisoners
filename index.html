@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="nl">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prisoner Dilemma Simulator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <header>
         <h1>The 100 Prisoners Problem</h1>
@@ -65,12 +63,12 @@
                     <div class="counter" id="counter-loop">Simulations: 0</div>
                     
                     <div class="chart-container">
-                        <svg id="chart-loop" viewBox="-10 -10 64 64" width="200" height="200">
-                            <circle id="purple-circle-loop" cx="16" cy="16" r="14" fill="transparent" stroke="#8654eb" stroke-width="7"
+                        <svg id="chart-loop" viewBox="-15 -15 80 80" width="300" height="300">
+                            <circle id="purple-circle-loop" cx="16" cy="16" r="14" fill="transparent" stroke="#444444" stroke-width="7"
                                 stroke-dasharray="100 100" stroke-linecap="butt" transform="rotate(-90 16 16)" />
-                            <circle id="green-circle-loop" cx="16" cy="16" r="14" fill="transparent" stroke="#50fa7b" stroke-width="7"
+                            <circle id="green-circle-loop" cx="16" cy="16" r="14" fill="transparent" stroke="#ffffff" stroke-width="7"
                                 stroke-dasharray="0 100" stroke-linecap="butt" transform="rotate(-90 16 16)" />
-                            <text id="percentage-text-loop" x="16" y="20" font-size="4" fill="#f8f8f2" text-anchor="middle">0%</text>
+                            <text id="percentage-text-loop" x="16" y="20" font-size="8" fill="#ffffff" text-anchor="middle">0%</text>
                         </svg>
                     </div>
                     <pre id="output-loop"></pre>
@@ -85,12 +83,12 @@
                     <div class="counter" id="counter-random">Simulations: 0</div>
                     
                     <div class="chart-container">
-                        <svg id="chart-random" viewBox="-10 -10 64 64" width="200" height="200">
-                            <circle id="purple-circle-random" cx="16" cy="16" r="14" fill="transparent" stroke="#8654eb" stroke-width="7"
+                        <svg id="chart-random" viewBox="-15 -15 80 80" width="300" height="300">
+                            <circle id="purple-circle-random" cx="16" cy="16" r="14" fill="transparent" stroke="#444444" stroke-width="7"
                                 stroke-dasharray="100 100" stroke-linecap="butt" transform="rotate(-90 16 16)" />
-                            <circle id="green-circle-random" cx="16" cy="16" r="14" fill="transparent" stroke="#50fa7b" stroke-width="7"
+                            <circle id="green-circle-random" cx="16" cy="16" r="14" fill="transparent" stroke="#ffffff" stroke-width="7"
                                 stroke-dasharray="0 100" stroke-linecap="butt" transform="rotate(-90 16 16)" />
-                            <text id="percentage-text-random" x="16" y="20" font-size="8" fill="#f8f8f2" text-anchor="middle">0%</text>
+                            <text id="percentage-text-random" x="16" y="20" font-size="8" fill="#ffffff" text-anchor="middle">0%</text>
                         </svg>
                     </div>
                     <pre id="output-random"></pre>
@@ -105,5 +103,4 @@
     
     <script src="script.js"></script>
 </body>
-
 </html>

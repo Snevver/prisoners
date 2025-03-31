@@ -310,24 +310,12 @@ pre {
 
 .chart-container {
     margin: 2rem auto;
-    max-width: 220px;
+    max-width: 300px;
     padding: 20px;
-    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .chart-container svg circle {
     stroke-width: 7;
-}
-
-.chart-container svg #purple-circle-loop,
-.chart-container svg #purple-circle-random {
-    stroke: var(--chart-bg);
-}
-
-.chart-container svg #green-circle-loop,
-.chart-container svg #green-circle-random {
-    stroke: var(--chart-success);
-    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
 }
 
 .chart-container svg text {
